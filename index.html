@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bidding</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Bidding</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="./login.html#pills-login">Login</a>
+            </li>
+            <li class="nav-item d-lg-none">
+              <a class="nav-link" href="./login.html#pills-register"
+                >Register</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="d-none d-lg-block" id="authBtns">
+          <a href="./login.html#pills-login" class="btn btn-primary">Login</a>
+          <a href="./login.html#pills-register" class="btn btn-warning"
+            >Register</a
+          >
+        </div>
+        <div id="userData" class="d-none">
+          <div
+            id="username"
+            class="d-inline-block border border-primary p-2 mx-1"
+          ></div>
+          <button class="btn btn-danger d-inline-block" id="signOutBtn">
+            Sign out
+          </button>
+        </div>
+      </div>
+    </nav>
+    <section class="p-5">
+      <button class="btn btn-outline-primary" id="create-product-btn">
+        Toggle create request
+      </button>
+    </section>
+    <section class="w-50 m-auto mt-5 d-none" id="create-product-form">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Name</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          id="create-product-name"
+        />
+      </div>
+      <div class="input-group">
+        <span class="input-group-text">Description</span>
+        <textarea
+          class="form-control"
+          aria-label="With textarea"
+          id="create-product-description"
+        ></textarea>
+      </div>
+      <button class="btn btn-warning mt-1" id="create-product-submit-btn">
+        Submit
+      </button>
+    </section>
+    <section
+      class="p-2 d-flex flex-wrap justify-content-start w-100"
+      id="products"
+    ></section>
+  </body>
+  <script src="
+https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
+"></script>
+  <script>
+    const payProduct = (priceId) => {
+      var settings = {
+        url: "http://localhost:8080/payment/pay",
+        method: "POST",
+        timeout: 0,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer " + JSON.parse(localStorage.getItem("jwt")).access_token,
+        },
+        data: JSON.stringify({
+          quantity: 1,
+          priceId: parseInt(priceId),
+          currency: "cad",
+        }),
+      };
+
+      $.ajax(settings).done(function (response) {
+        window.open(
+          response,
+          "_blank", // <- This is what makes it open in a new window.
+        );
+      });
+    };
+
+    const renderProducts = () => {
+      const settings = {
+        url: "http://localhost:8080/product",
+        method: "GET",
+        timeout: 0,
+      };
+
+      $.ajax(settings).done(function (response) {
+        $("#products").html(
+          response
+            .map(({ id, name, description, prices, status }) =>
+              productCard(
+                id,
+                name,
+                description,
+                prices
+                  .map((p) => {
+                    return `<div>Price: ${
+                      p.price / 100 + "." + (p.price % 100)
+                    }<button class="d-inline-block btn btn-danger m-2" onClick="payProduct(${
+                      p.id
+                    })">pay</button> </div>`;
+                  })
+                  .join(""),
+                status,
+              ),
+            )
+            .join(""),
+        );
+      });
+    };
+
+    renderProducts();
+
+    $("#create-product-btn").click(() => {
+      if ($("#create-product-form").hasClass("d-none")) {
+        $("#create-product-form").removeClass("d-none");
+      } else {
+        $("#create-product-form").addClass("d-none");
+      }
+    });
+
+    const createPrice = () => {
+      var settings = {
+        url: "http://localhost:8080/product/price",
+        method: "POST",
+        timeout: 0,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer " + JSON.parse(localStorage.getItem("jwt")).access_token,
+        },
+        data: JSON.stringify({
+          productId: 1,
+          price: 100000,
+          description: "price",
+          currency: "cad",
+        }),
+      };
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+    };
+
+    const createProduct = () => {
+      var settings = {
+        url: "http://localhost:8080/product",
+        method: "POST",
+        timeout: 0,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer " + JSON.parse(localStorage.getItem("jwt")).access_token,
+        },
+        data: JSON.stringify({
+          name: $("#create-product-name").val(),
+          description: $("#create-product-description").val(),
+        }),
+      };
+
+      $.ajax(settings).done(function (response) {
+        renderProducts();
+      });
+    };
+
+    $("#create-product-submit-btn").click(() => {
+      createProduct();
+    });
+
+    const productCard = (id, name, description, prices, status) => {
+      return `<div class="d-block m-2" style="width:18rem" data-id="${id}"> <div class="card m-1" >
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${name}</h5>
+            <p class="card-text">${description}</p>
+            <div class="border border-primary">${status}</div>
+            <div>${prices}</div>
+        </div>
+        </div></div>`;
+    };
+
+    const checkIsLoggedIn = () => {
+      const authData = JSON.parse(localStorage.getItem("jwt"));
+      const settings = {
+        url: "http://localhost:8080/auth/me",
+        method: "GET",
+        timeout: 0,
+        headers: {
+          Authorization: "Bearer " + authData.access_token,
+        },
+      };
+
+      $.ajax(settings).done(function (response) {
+        $("#username").text("Hello " + response.displayName + " !");
+        $("#authBtns").addClass("d-none");
+        $("#userData").addClass("d-block");
+        $("#userData").removeClass("d-none");
+        $("#authBtns").removeClass("d-lg-block");
+      });
+
+      $("#signOutBtn").click(() => {
+        $("#userData").addClass("d-none");
+        $("#authBtns").addClass("d-lg-block");
+        $("#authBtns").removeClass("d-none");
+
+        localStorage.removeItem("jwt");
+      });
+    };
+
+    checkIsLoggedIn();
+  </script>
+</html>

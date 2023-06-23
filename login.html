@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/ee5c417cf1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Option 1: Include in HTML -->
+  </head>
+  <body style="background-color: rgb(248, 249, 249)">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+      <div class="container-fluid">
+        <a class="navbar-brand mx-5" href="/">Bidding</a>
+      </div>
+    </nav>
+
+    <section>
+      <div class="col-lg-6 m-auto p-lg-4 border-bottom mt-5 d-flex">
+        <div class="col-lg-6 py-6 pe-3 d-none d-lg-block">
+          <div>
+            <image
+              class="d-block w-100"
+              src="https://mowsnowpros.com/wp-content/uploads/2021/12/2.jpg"
+            />
+          </div>
+          <!-- Register buttons -->
+          <div class="text-center d-none" id="register-link">
+            <p>Not a member? <a href="#pills-register">Register</a></p>
+          </div>
+
+          <div class="text-center d-none" id="login-link">
+            <p>Already a member? <a href="#pills-login">login</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-10 py-4 border-start ps-4">
+          <!-- Pills content -->
+          <div class="tab-content">
+            <div
+              class="tab-pane fade show active"
+              id="pills-login"
+              role="tabpanel"
+              aria-labelledby="tab-login"
+            >
+              <form>
+                <div class="text-center mb-3">
+                  <p>Sign in with:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+
+                <p class="text-center">or:</p>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="loginName" class="form-control" />
+                  <label class="form-label" for="loginName"
+                    >Email or username</label
+                  >
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="loginPassword"
+                    class="form-control"
+                  />
+                  <label class="form-label" for="loginPassword">Password</label>
+                </div>
+
+                <!-- 2 column grid layout -->
+                <div class="row mb-4">
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <!-- Checkbox -->
+                    <div class="form-check mb-3 mb-md-0">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="loginCheck"
+                        checked
+                      />
+                      <label class="form-check-label" for="loginCheck">
+                        Remember me
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6 d-flex justify-content-center">
+                    <!-- Simple link -->
+                    <a href="#!">Forgot password?</a>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <!-- Submit button -->
+                  <button
+                    type="submit"
+                    class="btn btn-outline-primary btn-block mb-4 signInBtn w-100"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="pills-register"
+              role="tabpanel"
+              aria-labelledby="tab-register"
+            >
+              <form>
+                <div class="text-center mb-3">
+                  <p>Sign up with:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div>
+
+                <p class="text-center">or:</p>
+
+                <!-- Name input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="registerName" class="form-control" />
+                  <label class="form-label" for="registerName">Name</label>
+                </div>
+
+                <!-- Username input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="registerUsername"
+                    class="form-control"
+                  />
+                  <label class="form-label" for="registerUsername"
+                    >Username</label
+                  >
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="registerEmail" class="form-control" />
+                  <label class="form-label" for="registerEmail">Email</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="registerPassword"
+                    class="form-control"
+                  />
+                  <label class="form-label" for="registerPassword"
+                    >Password</label
+                  >
+                </div>
+
+                <!-- Repeat Password input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="password"
+                    id="registerRepeatPassword"
+                    class="form-control"
+                  />
+                  <label class="form-label" for="registerRepeatPassword"
+                    >Repeat password</label
+                  >
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-4">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="registerCheck"
+                    checked
+                    aria-describedby="registerCheckHelpText"
+                  />
+                  <label class="form-check-label" for="registerCheck">
+                    I have read and agree to the terms
+                  </label>
+                </div>
+
+                <!-- Submit button -->
+              </form>
+              <button class="btn btn-outline-primary btn-block mb-3 w-100">
+                Sign up
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pills content -->
+    <footer class="p-4">
+      <div class="col-lg-5 m-auto">
+        By signing up, signing in or continuing, I agree to the Houzz Terms of
+        Use and acknowledge the Houzz Privacy Policy. I agree that Houzz may use
+        my email address for marketing purposes. I can opt out at any time
+        through my settings.
+      </div>
+    </footer>
+  </body>
+  <script src="
+https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
+"></script>
+  <script>
+    $(document).ready(function () {
+      $("form").submit((e) => {
+        return false;
+      });
+
+      $(".signInBtn").click((e) => {
+        const email = $("#loginName").val();
+        const pwd = $("#loginPassword").val();
+
+        if (!!email && !!pwd) {
+          const settings = {
+            url: "http://localhost:8080/auth/login",
+            method: "POST",
+            timeout: 0,
+            headers: {
+              "Content-Type": "application/json",
+              "Access-Control-Allow-Origin": "*",
+            },
+            data: JSON.stringify({
+              email,
+              password: pwd,
+            }),
+          };
+
+          $.ajax(settings).done(function (response) {
+            localStorage.setItem("jwt", JSON.stringify(response));
+            location.replace("/");
+          });
+        }
+      });
+
+      const page = () => {
+        const hash = location.hash.replace(/^#/, "");
+
+        if (hash === "pills-register") {
+          $("#pills-register").addClass("active show");
+          $("#pills-login").removeClass("active show");
+          $("#tab-register").addClass("active");
+          $("#tab-login").removeClass("active");
+          $("#login-link").removeClass("d-none");
+          $("#register-link").addClass("d-none");
+        }
+
+        if (hash === "pills-login") {
+          $("#pills-login").addClass("active show");
+          $("#pills-register").removeClass("active show");
+          $("#tab-login").addClass("active");
+          $("#tab-register").removeClass("active");
+          $("#register-link").removeClass("d-none");
+          $("#login-link").addClass("d-none");
+        }
+      };
+      page();
+
+      $(window).on("hashchange", function (e) {
+        page();
+      });
+    });
+  </script>
+</html>
