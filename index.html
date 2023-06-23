@@ -18,7 +18,7 @@
     ></script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Bidding</a>
         <button
@@ -70,6 +70,66 @@
         </div>
       </div>
     </nav>
+    <section class="d-flex">
+      <section class="col-lg-4 bg-success">
+        <div class="h-100 d-flex justify-content-center align-items-center">
+          <div class="input-group m-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="What service do you need?"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="button">
+                Get started
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="position-relative col-lg-8">
+        <div
+          class="position-absolute top-0 start-0 z-1 w-100 d-flex justify-content-center align-items-center"
+          style="height: 80vh; background-color: rgba(1, 12, 30, 0.2)"
+        >
+          <div class="col-4">
+            <div>
+              <h1 class="text-primary">The Best Place to Find Professionals</h1>
+              <p class="text-info">
+                Thousands of homeowners connect with the right pro every week
+                for their remodeling projects. Ready to find yours?
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          id="carousel-banner"
+          class="carousel slide position-relative"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner" style="height: 80vh">
+            <div class="carousel-item active h-100">
+              <img
+                src="https://media.angi.com/s3fs-public/mowing-aerial.jpg?impolicy=leadImage"
+                class="d-block"
+                alt="..."
+                style="min-width: 100%; min-height: 100%"
+              />
+            </div>
+            <div class="carousel-item h-100">
+              <img
+                src="https://aalawns.com/wp-content/uploads/2020/07/lawncare-and-landscaping-northern-kentucky-florence-cincinnati-ohio.jpg"
+                class="d-block"
+                alt="..."
+                style="min-width: 100%; min-height: 100%"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
     <section class="p-5">
       <button class="btn btn-outline-primary" id="create-product-btn">
         Toggle create request

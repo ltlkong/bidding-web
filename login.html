@@ -23,15 +23,17 @@
     <!-- Option 1: Include in HTML -->
   </head>
   <body style="background-color: rgb(248, 249, 249)">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom p-3">
       <div class="container-fluid">
         <a class="navbar-brand mx-5" href="/">Bidding</a>
       </div>
     </nav>
 
     <section>
-      <div class="col-lg-6 m-auto p-lg-4 border-bottom mt-5 d-flex">
-        <div class="col-lg-6 py-6 pe-3 d-none d-lg-block">
+      <div
+        class="col-lg-6 m-auto p-lg-2 border-bottom mt-3 d-flex align-items-center"
+      >
+        <div class="col-lg-6 py-6 pe-3 d-none d-lg-block border-end">
           <div>
             <image
               class="d-block w-100"
@@ -39,16 +41,16 @@
             />
           </div>
           <!-- Register buttons -->
-          <div class="text-center d-none" id="register-link">
+          <div class="text-center d-none register-link">
             <p>Not a member? <a href="#pills-register">Register</a></p>
           </div>
 
-          <div class="text-center d-none" id="login-link">
+          <div class="text-center d-none login-link">
             <p>Already a member? <a href="#pills-login">login</a></p>
           </div>
         </div>
 
-        <div class="col-lg-6 col-10 py-4 border-start ps-4">
+        <div class="col-lg-6 py-4 ps-lg-4 m-auto">
           <!-- Pills content -->
           <div class="tab-content">
             <div
@@ -229,6 +231,14 @@
                 Sign up
               </button>
             </div>
+
+            <div class="text-center d-none register-link d-lg-none">
+              <p>Not a member? <a href="#pills-register">Register</a></p>
+            </div>
+
+            <div class="text-center d-none login-link d-lg-none">
+              <p>Already a member? <a href="#pills-login">login</a></p>
+            </div>
           </div>
         </div>
       </div>
@@ -286,8 +296,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
           $("#pills-login").removeClass("active show");
           $("#tab-register").addClass("active");
           $("#tab-login").removeClass("active");
-          $("#login-link").removeClass("d-none");
-          $("#register-link").addClass("d-none");
+          $(".login-link").removeClass("d-none");
+          $(".register-link").addClass("d-none");
         }
 
         if (hash === "pills-login") {
@@ -295,8 +305,8 @@ https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
           $("#pills-register").removeClass("active show");
           $("#tab-login").addClass("active");
           $("#tab-register").removeClass("active");
-          $("#register-link").removeClass("d-none");
-          $("#login-link").addClass("d-none");
+          $(".register-link").removeClass("d-none");
+          $(".login-link").addClass("d-none");
         }
       };
       page();
