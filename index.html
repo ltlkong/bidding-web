@@ -16,8 +16,12 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/ee5c417cf1.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body>
+  <body style="background-color: rgb(248, 249, 249)">
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-3">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Bidding</a>
@@ -33,6 +37,21 @@
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="fa-regular fa-caret-down"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
             <div class="input-group-append">
               <button class="btn btn-secondary" type="button">
                 Get started
@@ -40,6 +59,7 @@
             </div>
           </div>
         </div>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -53,6 +73,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Customers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contractors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Bidding</a>
+            </li>
             <li class="nav-item d-lg-none">
               <a class="nav-link" href="./login.html#pills-login">Login</a>
             </li>
@@ -64,8 +93,10 @@
           </ul>
         </div>
         <div class="d-none d-lg-block" id="authBtns">
-          <a href="./login.html#pills-login" class="btn btn-primary">Login</a>
-          <a href="./login.html#pills-register" class="btn btn-warning"
+          <a href="./login.html#pills-login" class="btn btn-outline-primary"
+            >Login</a
+          >
+          <a href="./login.html#pills-register" class="btn btn-outline-warning"
             >Register</a
           >
         </div>
@@ -80,117 +111,184 @@
         </div>
       </div>
     </nav>
-    <section class="d-flex flex-wrap">
-      <section class="col-lg-4 bg-success-subtle col-12 order-lg-0 order-1">
-        <div class="h-100 d-flex justify-content-center align-items-center">
-          <div class="col-8 d-none d-lg-block">
-            <h1>Join Us!</h1>
-            <p>
-              Thousands of homeowners connect with the right pro every week for
-              their remodeling projects. Ready to find yours?
-            </p>
-            <div class="input-group my-2">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Email"
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2"
-              />
-            </div>
-            <div>
-              <button class="btn btn-primary w-100" type="button">
-                Join For Free
-              </button>
-            </div>
-          </div>
-          <div class="input-group m-3 d-lg-none">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="">R3Y</span>
-            </div>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="What service do you need?"
-              aria-label="Recipient's username"
-              aria-describedby="basic-addon2"
-            />
-            <div class="input-group-append">
-              <button class="btn btn-secondary" type="button">
-                Get started
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="position-relative col-lg-8 col-12 order-lg-1 order-0">
-        <div
-          class="position-absolute top-0 start-0 z-1 w-100 d-flex justify-content-center align-items-center"
-          style="height: 80vh; background-color: rgba(1, 12, 30, 0.5)"
-        >
-          <div class="col-lg-4 col-6">
-            <div>
-              <h1 class="text-primary">The Best Place to Find Professionals</h1>
-              <p class="text-info">
-                Thousands of homeowners connect with the right pro every week
-                for their remodeling projects. Ready to find yours?
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          id="carousel-banner"
-          class="carousel slide position-relative"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner" style="height: 80vh">
-            <div class="carousel-item active h-100">
-              <img
-                src="https://media.angi.com/s3fs-public/mowing-aerial.jpg?impolicy=leadImage"
-                class="d-block"
-                alt="..."
-                style="min-width: 100%; min-height: 100%"
-              />
-            </div>
-            <div class="carousel-item h-100">
-              <img
-                src="https://aalawns.com/wp-content/uploads/2020/07/lawncare-and-landscaping-northern-kentucky-florence-cincinnati-ohio.jpg"
-                class="d-block"
-                alt="..."
-                style="min-width: 100%; min-height: 100%"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
 
-    <section>
-      <div class="px-4 pt-2 pb-1">
-        <h2 class="text-primary-emphasis">
-          Here's what you can do on Bidding ...
-        </h2>
+    <section class="d-flex">
+      <!-- Side Bar -->
+      <div class="flex-shrink-0 p-3 bg-white col-lg-2 d-none d-lg-block">
+        <a
+          href="/"
+          class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
+        >
+          <svg class="bi me-2" width="30" height="24">
+            <use xlink:href="#bootstrap"></use>
+          </svg>
+          <span class="fs-5 fw-semibold">Calgary</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle align-items-center rounded collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#dashboard-collapse"
+              aria-expanded="false"
+            >
+              Dashboard
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-dark rounded">Overview</a></li>
+                <li><a href="#" class="link-dark rounded">Weekly</a></li>
+                <li><a href="#" class="link-dark rounded">Monthly</a></li>
+                <li><a href="#" class="link-dark rounded">Annually</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button
+              class="btn btn-toggle align-items-center rounded collapsed"
+              data-bs-toggle="collapse"
+              data-bs-target="#orders-collapse"
+              aria-expanded="false"
+            >
+              Filter
+            </button>
+            <div id="orders-collapse" class="collapse show">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#" class="link-dark rounded">Landscape</a></li>
+                <li><a href="#" class="link-dark rounded">Lawn Service</a></li>
+                <li><a href="#" class="link-dark rounded">Snow Removing</a></li>
+                <li><a href="#" class="link-dark rounded">Plumbing</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+        </ul>
       </div>
-      <div class="d-flex justify-content-around flex-wrap">
-        <div class="card col-5 m-2">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Card subtitle
-            </h6>
-            <a href="#" class="card-link">Card link</a>
+
+      <section>
+        <section class="d-flex flex-wrap">
+          <section class="col-lg-4 bg-success-subtle col-12 order-lg-0 order-1">
+            <div class="h-100 d-flex justify-content-center align-items-center">
+              <div class="col-8 d-none d-lg-block">
+                <h1>Join Us!</h1>
+                <p>
+                  Thousands of homeowners connect with the right pro every week
+                  for their remodeling projects. Ready to find yours?
+                </p>
+                <a href="">Learn more -></a>
+                <div class="input-group my-2">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Email"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
+                </div>
+                <div>
+                  <button class="btn btn-primary w-100" type="button">
+                    Join For Free
+                  </button>
+                </div>
+                <p style="font-size: 0.8em" class="mt-2">
+                  By signing up, signing in or continuing, I agree to the Houzz
+                  Terms of Use and acknowledge the Houzz Privacy Policy. I agree
+                  that Houzz may use my email address for marketing purposes. I
+                  can opt out at any time through my settings.
+                </p>
+              </div>
+              <div class="input-group m-3 d-lg-none">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">R3Y</span>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="What service do you need?"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+
+                <div class="input-group-append">
+                  <button class="btn btn-secondary" type="button">
+                    Get started
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Home Banner -->
+          <section class="position-relative col-lg-8 col-12 order-lg-1 order-0">
+            <div
+              class="position-absolute top-0 start-0 z-1 w-100 d-flex justify-content-center align-items-center"
+              style="height: 80vh; background-color: rgba(1, 12, 30, 0.5)"
+            >
+              <div class="col-lg-4 col-6 position-relative" style="right: 6rem">
+                <div>
+                  <h1 class="text-primary">
+                    The Best Place to Find Professionals
+                  </h1>
+                  <p class="text-info">
+                    Thousands of homeowners connect with the right pro every
+                    week for their remodeling projects. Ready to find yours?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              id="carousel-banner"
+              class="carousel slide position-relative"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner" style="height: 80vh">
+                <div class="carousel-item active h-100">
+                  <img
+                    src="https://media.angi.com/s3fs-public/mowing-aerial.jpg?impolicy=leadImage"
+                    class="d-block"
+                    alt="..."
+                    style="min-width: 100%; min-height: 100%"
+                  />
+                </div>
+                <div class="carousel-item h-100">
+                  <img
+                    src="https://aalawns.com/wp-content/uploads/2020/07/lawncare-and-landscaping-northern-kentucky-florence-cincinnati-ohio.jpg"
+                    class="d-block"
+                    alt="..."
+                    style="min-width: 100%; min-height: 100%"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section>
+          <div class="px-4 pt-2 pb-1">
+            <h2 class="text-primary-emphasis">
+              Here's what you can do on Bidding ...
+            </h2>
           </div>
-        </div>
-        <div class="card col-5 m-2">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Card subtitle
-            </h6>
-            <a href="#" class="card-link">Card link</a>
-          </div>
-        </div>
-        <!-- <div class="card col-5 m-2">
+          <div class="d-flex justify-content-around flex-wrap">
+            <div class="card col-5 m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <a href="#" class="card-link">Card link</a>
+              </div>
+            </div>
+            <div class="card col-5 m-2">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Card subtitle
+                </h6>
+                <a href="#" class="card-link">Card link</a>
+              </div>
+            </div>
+            <!-- <div class="card col-5 m-2">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <h6 class="card-subtitle mb-2 text-body-secondary">
@@ -208,45 +306,45 @@
             <a href="#" class="card-link">Card link</a>
           </div>
         </div> -->
-      </div>
-      <div>
-        <div class="px-4 pt-2">
-          <h3 class="text-primary-emphasis">Find contractors</h3>
-        </div>
-        <div class="p-4">
-          <button class="btn btn-outline-info m-1">Snow removing</button>
-          <button class="btn btn-outline-info m-1">Lawn services</button>
-          <button class="btn btn-outline-info m-1">Deck building</button>
-          <button class="btn btn-outline-info m-1">Plumbing</button>
-          <button class="btn btn-outline-info m-1">Moving</button>
-        </div>
-        <div class="p-4 d-flex justify-content-start flex-wrap">
-          <div class="card col-lg-2 m-2">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          <div>
+            <div class="px-4 pt-2">
+              <h3 class="text-primary-emphasis">Find contractors</h3>
+            </div>
+            <div class="p-4">
+              <button class="btn btn-outline-info m-1">Snow removing</button>
+              <button class="btn btn-outline-info m-1">Lawn services</button>
+              <button class="btn btn-outline-info m-1">Deck building</button>
+              <button class="btn btn-outline-info m-1">Plumbing</button>
+              <button class="btn btn-outline-info m-1">Moving</button>
+            </div>
+            <div class="p-4 d-flex justify-content-start flex-wrap">
+              <div class="card col-lg-2 m-2">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <div class="card col-lg-2 m-2">
+                <img src="..." class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card col-lg-2 m-2">
-            <img src="..." class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- <section class="p-5">
+        </section>
+        <!-- <section class="p-5">
       <button class="btn btn-outline-primary" id="create-product-btn">
         Toggle create request
       </button>
@@ -274,10 +372,12 @@
         Submit
       </button>
     </section> -->
-    <!-- <section
+        <!-- <section
       class="p-2 d-flex flex-wrap justify-content-start w-100"
       id="products"
     ></section> -->
+      </section>
+    </section>
   </body>
   <script src="
 https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
