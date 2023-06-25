@@ -33,7 +33,7 @@
             <input
               type="text"
               class="form-control"
-              placeholder="What service do you need?"
+              placeholder="Search on Bidding"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"
             />
@@ -117,39 +117,29 @@
       <!-- Side Bar -->
       <div class="position-absolute top-0 start-0 h-100 col-lg-2">
         <div
-          class="flex-shrink-0 p-3 bg-white d-none d-lg-block position-sticky top-0 start-0 min-vh-100"
+          class="flex-shrink-0 p-3 bg-white d-none d-lg-block position-sticky top-0 start-0 min-vh-100 z-3"
         >
           <a
             href="/"
             class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom"
           >
-            <svg class="bi me-2" width="30" height="24">
-              <use xlink:href="#bootstrap"></use>
-            </svg>
             <span class="fs-5 fw-semibold">Calgary</span>
           </a>
-          <ul class="list-unstyled ps-0">
+
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search services"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+          </div>
+
+          <ul class="list-unstyled">
             <li class="mb-1">
               <button
-                class="btn btn-toggle align-items-center rounded collapsed"
-                data-bs-toggle="collapse"
-                data-bs-target="#dashboard-collapse"
-                aria-expanded="false"
-              >
-                Dashboard
-              </button>
-              <div class="collapse" id="dashboard-collapse">
-                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                  <li><a href="#" class="link-dark rounded">Overview</a></li>
-                  <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                  <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                  <li><a href="#" class="link-dark rounded">Annually</a></li>
-                </ul>
-              </div>
-            </li>
-            <li class="mb-1">
-              <button
-                class="btn btn-toggle align-items-center rounded collapsed"
+                class="btn btn-toggle rounded collapsed"
                 data-bs-toggle="collapse"
                 data-bs-target="#orders-collapse"
                 aria-expanded="false"
@@ -213,7 +203,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  placeholder="What service do you need?"
+                  placeholder="Search on Bidding"
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
@@ -233,7 +223,7 @@
               class="position-absolute top-0 start-0 z-1 w-100 d-flex justify-content-center align-items-center"
               style="height: 80vh; background-color: rgba(1, 12, 30, 0.5)"
             >
-              <div class="col-lg-4 col-6 position-relative" style="right: 6rem">
+              <div class="col-lg-4 col-6 position-relative" style="right: 4vw">
                 <div>
                   <h1 class="text-primary">
                     The Best Place to Find Professionals
@@ -279,7 +269,7 @@
             </h2>
           </div>
           <div class="d-flex justify-content-around flex-wrap">
-            <div class="card col-5 m-2">
+            <div class="card col-lg-5 col-10 m-2">
               <div class="card-body">
                 <h5 class="card-title">Make a request</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
@@ -288,7 +278,7 @@
                 <a href="#" class="card-link">Learn more</a>
               </div>
             </div>
-            <div class="card col-5 m-2">
+            <div class="card col-lg-5 m-2 col-10">
               <div class="card-body">
                 <h5 class="card-title">Find a contractor job</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">
@@ -297,37 +287,20 @@
                 <a href="#" class="card-link">Send an email to us</a>
               </div>
             </div>
-            <!-- <div class="card col-5 m-2">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Card subtitle
-            </h6>
-            <a href="#" class="card-link">Card link</a>
-          </div>
-        </div>
-        <div class="card col-5 m-2">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">
-              Card subtitle
-            </h6>
-            <a href="#" class="card-link">Card link</a>
-          </div>
-        </div> -->
           </div>
           <div>
             <div class="px-4 pt-2">
               <h3 class="text-primary-emphasis">Find contractors</h3>
             </div>
-            <div class="p-4">
+            <!-- <div class="p-4">
               <button class="btn btn-outline-info m-1">Snow removing</button>
               <button class="btn btn-outline-info m-1">Lawn services</button>
               <button class="btn btn-outline-info m-1">Deck building</button>
               <button class="btn btn-outline-info m-1">Plumbing</button>
               <button class="btn btn-outline-info m-1">Moving</button>
-            </div>
-            <div class="p-4 d-flex justify-content-start flex-wrap">
+            </div> -->
+
+            <!-- <div class="p-4 d-flex justify-content-start flex-wrap">
               <div class="card col-lg-2 m-2">
                 <img src="..." class="card-img-top" alt="..." />
                 <div class="card-body">
@@ -348,45 +321,55 @@
                     up the bulk of the card's content.
                   </p>
                   <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div> -->
+            <div class="container mb-4">
+              <div class="card mb-2">
+                <div class="row no-gutters">
+                  <div class="col-auto">
+                    <img src="//placehold.it/200" class="img-fluid" alt="" />
+                  </div>
+                  <div class="col">
+                    <div class="card-block px-2">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Description</p>
+                      <a href="#" class="btn btn-primary">BUTTON</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer w-100 text-muted">
+                  Footer stating cats are CUTE little animals
+                </div>
+              </div>
+
+              <div class="card mb-2">
+                <div class="row no-gutters">
+                  <div class="col-auto">
+                    <img src="//placehold.it/200" class="img-fluid" alt="" />
+                  </div>
+                  <div class="col">
+                    <div class="card-block px-2">
+                      <h4 class="card-title">Title</h4>
+                      <p class="card-text">Description</p>
+                      <a href="#" class="btn btn-primary">BUTTON</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer w-100 text-muted">
+                  Footer stating cats are CUTE little animals
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!-- <section class="p-5">
-      <button class="btn btn-outline-primary" id="create-product-btn">
-        Toggle create request
-      </button>
-    </section>
-    <section class="w-50 m-auto mt-5 d-none" id="create-product-form">
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">Name</span>
-        <input
-          type="text"
-          class="form-control"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-          id="create-product-name"
-        />
-      </div>
-      <div class="input-group">
-        <span class="input-group-text">Description</span>
-        <textarea
-          class="form-control"
-          aria-label="With textarea"
-          id="create-product-description"
-        ></textarea>
-      </div>
-      <button class="btn btn-warning mt-1" id="create-product-submit-btn">
-        Submit
-      </button>
-    </section> -->
-        <!-- <section
-      class="p-2 d-flex flex-wrap justify-content-start w-100"
-      id="products"
-    ></section> -->
       </section>
     </section>
+    <footer class="flex-shrink-0 py-4 bg-light border-top">
+      <div class="container text-center">
+        <small>Copyright &copy; Your Website</small>
+      </div>
+    </footer>
   </body>
   <script src="
 https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js
