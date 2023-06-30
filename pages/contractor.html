@@ -126,62 +126,184 @@
     </nav>
     <!-- Nav Bar End -->
 
-    <div class="col-11 py-4 m-auto">
-      <section style="height: 20vh" class="col-8">
-        <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide h-100"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner h-100">
-            <div class="carousel-item active h-100">
-              <img
-                src="https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/16/1698dac1-20ef-4411-8cbc-8f3026fa36ac?rule=kijijica-640-webp"
-                class="w-100 h-100 object-fit-contain"
-                alt="..."
-              />
+    <div class="col-11 py-4 m-auto d-flex">
+      <!-- Carousel -->
+      <div class="col-8">
+        <section style="height: 30vh" class="bg-secondary">
+          <div
+            id="carouselExampleAutoplaying"
+            class="carousel slide h-100"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner h-100">
+              <div class="carousel-item active h-100">
+                <img
+                  src="https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/16/1698dac1-20ef-4411-8cbc-8f3026fa36ac?rule=kijijica-640-webp"
+                  class="w-100 h-100 object-fit-contain"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item h-100">
+                <img
+                  src="//placehold.it/200"
+                  class="w-100 h-100 object-fit-contain"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item h-100">
+                <img
+                  src="//placehold.it/200"
+                  class="w-100 h-100 object-fit-contain"
+                  alt="..."
+                />
+              </div>
             </div>
-            <div class="carousel-item h-100">
-              <img
-                src="//placehold.it/200"
-                class="w-100 h-100 object-fit-contain"
-                alt="..."
-              />
-            </div>
-            <div class="carousel-item h-100">
-              <img
-                src="//placehold.it/200"
-                class="w-100 h-100 object-fit-contain"
-                alt="..."
-              />
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon bg-black"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon bg-black"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+        <!-- Carousel END -->
+
+        <!-- Review -->
+        <section class="py-4">
+          <div class="d-flex">
+            <div><img src="//placehold.it/300x200" /></div>
+            <div class="mx-4">
+              <h4>CC Contractor team</h4>
+              <div>
+                <span>4</span>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div>General Contractor, Lawn Service & Snow Removal</div>
+              <div>2 Selects on Bidding</div>
             </div>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
-          >
-            <span
-              class="carousel-control-prev-icon bg-black"
-              aria-hidden="true"
-            ></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
-          >
-            <span
-              class="carousel-control-next-icon bg-black"
-              aria-hidden="true"
-            ></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <div class="mt-4">
+            <button class="btn btn-primary">Write a Review</button>
+            <button class="btn btn-primary">Save</button>
+          </div>
+        </section>
+        <!-- Review END -->
+        <!-- Sub Nav -->
+        <nav class="navbar navbar-expand-lg border-bottom mb-4">
+          <div class="container-fluid">
+            <ul class="navbar-nav d-flex justify-content-around w-100">
+              <li class="nav-item m-1">
+                <a href="#" class="nav-link active">About</a>
+              </li>
+              <li class="nav-item m-1">
+                <a href="#" class="nav-link active">Projects</a>
+              </li>
+              <li class="nav-item m-1">
+                <a href="#" class="nav-link active">Business</a>
+              </li>
+              <li class="nav-item m-1">
+                <a href="#" class="nav-link active">Reviews</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Sub Nav End -->
+
+        <div class="border-bottom p-2">
+          <h6>Lorem ipsum dolor sit amet</h6>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
+            laboriosam commodi corporis explicabo mollitia unde, reprehenderit
+            illo nulla, odio nihil voluptatem fuga, eum labore! Unde tenetur
+            fuga beatae architecto modi!
+          </p>
         </div>
-      </section>
+
+        <div class="border-bottom p-2">
+          <h6>2 Projects</h6>
+          <div class="mb-4">
+            <button class="btn btn-secondary">Lawn Service</button>
+            <button class="btn btn-secondary">Snow Removal</button>
+          </div>
+          <div class="d-flex flex-wrap justify-content-around">
+            <div>
+              <img src="//placehold.it/200" />
+            </div>
+            <div>
+              <img src="//placehold.it/200" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Send Email Form -->
+      <div class="col-4">
+        <div class="m-4">
+          <button class="btn btn-primary">Talk to Contractor</button>
+        </div>
+
+        <form class="border rounded p-4 ms-4">
+          <h4>Contact Contractor</h4>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Email"
+            />
+            <div id="emailHelp" class="form-text">
+              We'll never share your email with anyone else.
+            </div>
+          </div>
+          <div class="mb-3">
+            <input
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Your Name"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Phone Number"
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control w-100"
+              placeholder="Leave a comment here"
+              id="floatingTextarea2"
+              style="height: 100px"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-success w-100">Send</button>
+        </form>
+      </div>
+      <!-- Send Email Form END -->
     </div>
   </body>
 </html>
